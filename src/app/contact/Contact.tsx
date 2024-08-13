@@ -21,12 +21,12 @@ const Contact = () => {
         return;
       }
 
-      const userEmail = form.current?.elements
-        .namedItem("user_email")
-        ?.value?.trim();
-      const userMessage = form.current?.elements
-        .namedItem("user_message")
-        ?.value?.trim();
+      const userEmail = (
+        form.current?.elements.namedItem("user_email") as HTMLInputElement
+      )?.value?.trim();
+      const userMessage = (
+        form.current?.elements.namedItem("user_message") as HTMLInputElement
+      )?.value?.trim();
 
       if (!userMessage) {
         setError("Please enter a message.");
